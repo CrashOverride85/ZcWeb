@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ZC95 Web Tools</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="app-shell__header">
+      <a class="brand" href="#/firmware" aria-label="ZC95 firmware updater">
+        <span>ZC95 Web Tools</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#/firmware" data-route-link="/firmware">Firmware</a>
+        <a href="#/about" data-route-link="/about">About</a>
+      </nav>
+    </header>
+
+    <main id="app" class="app-shell" tabindex="-1"></main>
+
+    <template id="dialog-template">
+      <div class="dialog-backdrop" role="presentation">
+        <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+          <h2 id="dialog-title"></h2>
+          <div class="dialog-body"></div>
+          <div class="dialog-actions"></div>
+        </section>
+      </div>
+    </template>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

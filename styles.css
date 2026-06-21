@@ -1,0 +1,380 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f7f8;
+  --panel: #ffffff;
+  --panel-alt: #eef5f3;
+  --text: #172026;
+  --muted: #65717c;
+  --line: #d7dde2;
+  --line-strong: #aeb8c2;
+  --accent: #167d73;
+  --accent-strong: #0f5f58;
+  --accent-soft: #d9efeb;
+  --danger: #b9363e;
+  --warning-bg: #fff5d6;
+  --warning-line: #d7ae44;
+  --focus: #2f6fed;
+  --shadow: 0 12px 32px rgba(23, 32, 38, 0.08);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+button {
+  min-height: 40px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 0 16px;
+  color: #ffffff;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: var(--accent-strong);
+}
+
+button:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--focus), transparent 65%);
+  outline-offset: 2px;
+}
+
+button:disabled,
+select:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+button.secondary {
+  color: var(--text);
+  background: #ffffff;
+  border-color: var(--line-strong);
+}
+
+button.secondary:hover:not(:disabled) {
+  background: #f0f3f6;
+}
+
+button.danger {
+  background: var(--danger);
+}
+
+.app-shell__header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  padding: 0 clamp(16px, 4vw, 48px);
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text);
+  font-weight: 720;
+  text-decoration: none;
+}
+
+.nav {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  border-radius: 6px;
+  padding: 0 12px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.nav a.is-active {
+  color: var(--text);
+  background: var(--accent-soft);
+}
+
+.app-shell {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: clamp(20px, 4vw, 40px);
+}
+
+.page-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 24px;
+}
+
+.page-heading h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 2.6rem, 2.6rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.page-heading p {
+  max-width: 68ch;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.support-warning {
+  display: none;
+  margin-bottom: 18px;
+  border: 1px solid var(--warning-line);
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: var(--warning-bg);
+  line-height: 1.45;
+}
+
+.support-warning.is-visible {
+  display: block;
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.panel h2 {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.field-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+}
+
+.field label {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+select {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 0 12px;
+  color: var(--text);
+  background: #ffffff;
+}
+
+.release-meta {
+  min-height: 96px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  color: var(--muted);
+  background: var(--panel-alt);
+  line-height: 1.45;
+}
+
+.release-meta strong {
+  color: var(--text);
+}
+
+.firmware-description {
+  display: block;
+  margin-top: 8px;
+  color: var(--text);
+  white-space: pre-wrap;
+}
+
+.more-info-link {
+  display: inline-flex;
+  margin-top: 8px;
+  color: var(--accent-strong);
+  font-weight: 650;
+}
+
+.actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.port-state {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.progress-wrap {
+  display: grid;
+  gap: 10px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: #eef1f4;
+}
+
+.progress-bar__fill {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #2f6fed);
+  transition: width 180ms ease;
+}
+
+.status-line {
+  min-height: 44px;
+  margin: 0;
+  color: var(--text);
+  line-height: 1.45;
+}
+
+.log {
+  height: 220px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #111820;
+  color: #d9f5ef;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
+
+.dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(23, 32, 38, 0.48);
+}
+
+.dialog {
+  width: min(560px, 100%);
+  border-radius: 8px;
+  padding: 22px;
+  background: #ffffff;
+  box-shadow: 0 20px 60px rgba(23, 32, 38, 0.22);
+}
+
+.dialog h2 {
+  margin: 0 0 12px;
+  font-size: 1.2rem;
+}
+
+.dialog-body {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.dialog-body ol {
+  padding-left: 22px;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.about-empty {
+  min-height: 320px;
+  border: 1px dashed var(--line-strong);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+@media (max-width: 800px) {
+  .app-shell__header,
+  .page-heading {
+    align-items: start;
+  }
+
+  .app-shell__header {
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .page-heading,
+  .layout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions-row,
+  .dialog-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
