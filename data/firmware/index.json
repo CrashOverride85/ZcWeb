@@ -8,6 +8,14 @@
       "zc95SizeBytes": 3823616,
       "zc624Path": "v2.1/OutputZc.uf2",
       "zc624SizeBytes": 194048
+    },
+    {
+      "tag": "v2.2",
+      "description": "Miscellaneous tweaks and fixes",
+      "zc95Path": "v2.2/zc95.uf2",
+      "zc95SizeBytes": 3841536,
+      "zc624Path": "v2.2/OutputZc.uf2",
+      "zc624SizeBytes": 194048
     }
   ]
 }
