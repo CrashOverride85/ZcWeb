@@ -16,6 +16,14 @@
       "zc95SizeBytes": 3841536,
       "zc624Path": "v2.2/OutputZc.uf2",
       "zc624SizeBytes": 194048
+    },
+    {
+      "tag": "v2.3",
+      "description": "Store Lua scripts on SD card, use shock collars from Lua, and serial over BLE",
+      "zc95Path": "v2.3/zc95.uf2",
+      "zc95SizeBytes": 3777024,
+      "zc624Path": "v2.3/OutputZc.uf2",
+      "zc624SizeBytes": 240128
     }
   ]
 }
